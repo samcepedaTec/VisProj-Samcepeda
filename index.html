@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Título del proyecto</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="portada">
+      <p class="curso">Visualización de datos - TEC</p>
+      <h1>Título del proyecto</h1>
+      <p class="bajada">Una frase breve que explique qué pregunta responde la visualización y por qué importa.</p>
+      <p class="autoria">Por Nombre Apellido</p>
+    </header>
+
+    <main>
+      <section class="bloque">
+        <h2>Contexto</h2>
+        <p>
+          Presenta el fenómeno, el lugar, el periodo o la población que se está observando.
+          Este primer texto debe preparar a la persona lectora para entender qué mirar en la visualización.
+        </p>
+      </section>
+
+      <section class="visualizacion" aria-labelledby="titulo-viz">
+        <div class="encabezado-viz">
+          <h2 id="titulo-viz">Visualización principal</h2>
+          <p>Reemplaza este iframe por el código embebido de tu cuaderno de Observable.</p>
+        </div>
+
+        <iframe
+          title="Visualización de ejemplo tomada de Observable"
+          src="https://observablehq.com/embed/@d3/bar-chart?cells=chart"
+          loading="lazy">
+        </iframe>
+
+        <aside class="pasos-observable" aria-labelledby="titulo-observable">
+          <h3 id="titulo-observable">Cómo embeber desde Observable</h3>
+          <ol>
+            <li>Publica el cuaderno o compártelo con enlace. Los cuadernos privados necesitan una llave especial.</li>
+            <li>En Observable, abre el menú de la celda o el menú del cuaderno y busca la opción <strong>Embed</strong> o <strong>Embed cells</strong>.</li>
+            <li>Selecciona la celda que quieres mostrar. Para que aparezca en la lista, normalmente debe tener nombre, por ejemplo <code>chart = ...</code>.</li>
+            <li>Copia el código de la opción <strong>Iframe</strong> y pégalo en este lugar, reemplazando el iframe de ejemplo.</li>
+            <li>Revisa la altura. Si la visualización queda cortada, ajusta la altura del iframe en CSS o en el atributo <code>height</code>.</li>
+          </ol>
+        </aside>
+
+        <p class="nota">
+          Fuente: nombre de la fuente, fecha de consulta. Metodología: breve nota sobre limpieza, filtros o decisiones de diseño.
+        </p>
+      </section>
+
+      <section class="bloque">
+        <h2>Lectura</h2>
+        <p>
+          Escribe aquí el hallazgo principal. Evita repetir lo que la persona ya puede ver.
+          Interpreta el patrón, la excepción o la comparación más importante.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Proyecto desarrollado para el Curso de visualización de datos - TEC - Uniandes.</p>
+    </footer>
+  </body>
+</html>

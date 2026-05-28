@@ -1,12 +1,11 @@
 :root {
-  color-scheme: light;
-  --fondo: #f8f7f3;
+  --fondo: #f4f1ea;
   --texto: #202124;
-  --muted: #62615c;
-  --linea: #d8d4c8;
-  --acento: #116a7b;
-  --acento-oscuro: #0c4854;
-  --panel: #ffffff;
+  --muted: #67635b;
+  --linea: #d3cab8;
+  --panel: #fffdf8;
+  --acento: #1c6b82;
+  --acento-2: #c4552d;
 }
 
 * {
@@ -17,26 +16,27 @@ body {
   margin: 0;
   background: var(--fondo);
   color: var(--texto);
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.6;
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.portada {
-  min-height: 72vh;
-  display: grid;
-  align-content: center;
-  gap: 1rem;
-  padding: 6rem max(1.25rem, 8vw) 4rem;
-  border-bottom: 1px solid var(--linea);
+header,
+main {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto;
 }
 
-.curso,
-.autoria,
-.nota,
-footer {
-  color: var(--muted);
-  font-family: Arial, sans-serif;
-  font-size: 0.92rem;
+header {
+  padding: 5rem 0 3rem;
+}
+
+.etiqueta {
+  margin: 0 0 0.75rem;
+  color: var(--acento-2);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 h1,
@@ -46,117 +46,119 @@ p {
 }
 
 h1 {
-  max-width: 980px;
-  font-size: clamp(3rem, 10vw, 8rem);
-  line-height: 0.95;
+  max-width: 920px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.98;
   letter-spacing: 0;
-}
-
-h2 {
-  font-size: clamp(1.6rem, 4vw, 3rem);
-  line-height: 1.05;
 }
 
 .bajada {
   max-width: 720px;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-}
-
-main {
-  width: min(1120px, calc(100% - 2.5rem));
-  margin: 0 auto;
-}
-
-.bloque {
-  max-width: 720px;
-  padding: 5rem 0;
-}
-
-.bloque p {
-  margin-top: 1rem;
-  font-size: 1.12rem;
-}
-
-.visualizacion {
-  padding: 4rem 0;
-  border-top: 1px solid var(--linea);
-  border-bottom: 1px solid var(--linea);
-}
-
-.encabezado-viz {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1fr);
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.encabezado-viz p {
+  margin-top: 1.25rem;
   color: var(--muted);
-  font-family: Arial, sans-serif;
+  font-size: 1.25rem;
 }
 
-iframe {
-  display: block;
-  width: 100%;
-  min-height: 620px;
+.panel-resumen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 4rem;
+}
+
+.panel-resumen article {
+  min-height: 132px;
+  padding: 1.2rem;
   border: 1px solid var(--linea);
   border-radius: 8px;
   background: var(--panel);
 }
 
-.nota {
+.panel-resumen span {
+  display: block;
+  color: var(--acento);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+}
+
+.panel-resumen p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+.contenedor-viz {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.45fr) minmax(320px, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  padding: 4rem 0;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.contenedor-viz p:not(.etiqueta) {
   margin-top: 1rem;
+  color: var(--muted);
 }
 
-.pasos-observable {
-  margin-top: 1.25rem;
-  padding: 1.25rem;
-  border: 1px solid var(--linea);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-  font-family: Arial, sans-serif;
+code {
+  color: var(--acento);
+  font-weight: 700;
 }
 
-.pasos-observable h3 {
-  margin: 0;
-  color: var(--acento-oscuro);
-  font-size: 1rem;
+.grafica {
+  display: grid;
+  gap: 0.85rem;
 }
 
-.pasos-observable ol {
-  margin: 0.85rem 0 0;
-  padding-left: 1.2rem;
+.barra {
+  display: grid;
+  grid-template-columns: minmax(96px, 160px) 1fr minmax(42px, auto);
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.pasos-observable li + li {
-  margin-top: 0.55rem;
+.barra strong {
+  overflow-wrap: anywhere;
 }
 
-.pasos-observable code {
-  padding: 0.1rem 0.28rem;
-  border-radius: 4px;
-  background: #ece8dd;
-  font-family: Consolas, "Liberation Mono", monospace;
-  font-size: 0.92em;
+.riel {
+  height: 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e3dccf;
 }
 
-footer {
-  width: min(1120px, calc(100% - 2.5rem));
-  margin: 0 auto;
-  padding: 2rem 0 4rem;
+.relleno {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--acento), var(--acento-2));
 }
 
-@media (max-width: 720px) {
-  .portada {
-    min-height: 64vh;
-    padding-top: 4rem;
-  }
+.lectura {
+  max-width: 760px;
+  padding: 3rem 0 5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.25;
+}
 
-  .encabezado-viz {
+@media (max-width: 760px) {
+  .panel-resumen,
+  .contenedor-viz {
     grid-template-columns: 1fr;
   }
 
-  iframe {
-    min-height: 460px;
+  .barra {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 }

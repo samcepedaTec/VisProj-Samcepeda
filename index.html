@@ -7,26 +7,42 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <p class="etiqueta">Datos locales</p>
-      <h1>¿Qué opinan los LLMs de lo que comentamos sobre crear con IA?</h1>
-      <p class="bajada">Eorma en barras, tarjetas y una lectura breve.</p>
+    <header class="portada">
+      <div class="portada-fondo" aria-hidden="true">
+        <span class="capa capa-1"></span>
+        <span class="capa capa-2"></span>
+        <span class="capa capa-3"></span>
+      </div>
+      <div class="portada-texto">
+        <p class="etiqueta">Datos locales</p>
+        <h1>¿Qué opinan los LLMs de lo que comentamos sobre crear con IA?</h1>
+        <p class="meta">Una conversación humana con modelos de lenguaje no humanos</p>
+      </div>
     </header>
 
     <main>
+      <section class="intro">
+        <p class="lead">
+          La inteligencia artificial (IA) no solo está transformando el panorama de la creatividad, sino que también nos obliga a reflexionar sobre nuestras propias posturas frente ella. ¿Celebramos su potencial para expandir la creatividad humana o lamentamos el que pueda deshumanizarla?
+        </p>
+        <p class="lead">
+          Buscamos las tendencias de opinión entre usuarios que discuten sobre la creatividad asistida por IA (específicamente en X, antes Twitter), y con herramientas avanzadas de procesamiento de lenguaje natural
+          (LLMs) observamos la interpretación que los LLMs hacen de nuestras opiniones para ver hasta dónde son capaces de captar la complejidad de los matices humanos. Esto es lo que encontramos.
+        </p>
+      </section>
+
       <section class="panel-resumen" aria-label="Resumen de datos">
         <article>
           <span id="total-registros">0</span>
-          <p>Grupos de hashtags en "X"
-          </p>
+          <p>Grupos de #s creados (1217 #s en total)</p>
         </article>
         <article>
           <span id="valor-total">0</span>
-          <p>frecuencia total de uso</p>
+          <p>Frecuencia total de uso de los grupos de #s</p>
         </article>
         <article>
           <span id="categoria-mayor">-</span>
-          <p>categoría mayor</p>
+          <p>Grupo de #s más empleado</p>
         </article>
       </section>
 
@@ -35,16 +51,107 @@
           <p class="etiqueta">Visualización</p>
           <h2>Valores por categoría</h2>
           <p>
-            Cambia los datos en <code>datos.csv</code> para adaptar esta plantilla a tu investigación.
-            Cada fila debe tener una categoría, un valor y una nota.
+            Cada categoría temática agrupa hashtags
+          </p>
+          <p class="texto-apoyo">
+            Pasa el cursor sobre la barra de color de las categorías para ver las etiquetas del grupo de #s.
           </p>
         </div>
         <div id="grafica" class="grafica" aria-live="polite"></div>
       </section>
 
-      <section>
-        <p class="etiqueta">Lectura generada</p>
+      <section class="bloque-lectura">
+        <p class="etiqueta">¿Qué significa esto?</p>
+        <p class="lectura">
+          Se usaron los modelos de lenguaje <span class="mencion-llm">Gemma3</span> y
+          <span class="mencion-llm">Falcon3</span> para clasificar, en positivas, negativas o neutras, las posturas de los usuarios.
+        </p>
         <p id="lectura" class="lectura">Cargando datos...</p>
+        <p class="lectura">
+          La interpretación de los LLMs fue muy distinta entre sí. Mientras en <span class="mencion-llm">Gemma3</span> prevalecen posiciones neutrales, <span class="mencion-llm">Falcon3</span> utiliza un enfoque más polarizado e interpretó más posturas negativas, estamos frente a dos formas diferentes de tratar con la ambiguaedad del lenguaje humano.
+        </p>
+      </section>
+
+      <section class="relato" aria-label="Relato con paralaje">
+        <div class="escena" aria-hidden="true">
+          <div class="progreso">
+            <span id="barra-progreso"></span>
+          </div>
+
+          <div class="lienzo" id="lienzo" data-escena="territorio">
+            <div class="sol"></div>
+            <div class="montana montana-fondo"></div>
+            <div class="montana montana-frente"></div>
+
+            <div class="mapa">
+              <span class="zona zona-a"></span>
+              <span class="zona zona-b"></span>
+              <span class="zona zona-c"></span>
+              <span class="punto punto-a"></span>
+              <span class="punto punto-b"></span>
+              <span class="punto punto-c"></span>
+            </div>
+
+            <div class="grafico-escena">
+              <span style="--alto: 34%"></span>
+              <span style="--alto: 58%"></span>
+              <span style="--alto: 76%"></span>
+              <span style="--alto: 46%"></span>
+            </div>
+
+            <div class="rotulo">
+              <p id="rotulo-etapa">Escena 1</p>
+              <strong id="rotulo-titulo">Ubicar el territorio</strong>
+            </div>
+          </div>
+        </div>
+
+        <article class="pasos">
+          <section class="paso activo" data-escena="territorio" data-etapa="Escena 1" data-titulo="Ubicar el territorio">
+            <p class="etiqueta">Escena 1</p>
+            <h2>Ubicar el territorio</h2>
+            <p>
+              Empieza con una vista amplia. Antes de mostrar datos complejos, sitúa el lugar, la
+              escala y la pregunta que organiza la historia sobre la creatividad asistida por IA.
+            </p>
+          </section>
+
+          <section class="paso" data-escena="cambio" data-etapa="Escena 2" data-titulo="Mostrar el cambio">
+            <p class="etiqueta">Escena 2</p>
+            <h2>Mostrar el cambio</h2>
+            <p>
+              La segunda escena puede activar una capa temporal: qué aumentó, qué se desplazó, qué aparece o qué desaparece frente al punto de partida en la conversación pública.
+            </p>
+          </section>
+
+          <section class="paso" data-escena="contraste" data-etapa="Escena 3" data-titulo="Comparar casos">
+            <p class="etiqueta">Escena 3</p>
+            <h2>Comparar casos</h2>
+            <p>
+              Un buen sistema dinámico no solo anima la página. También ayuda a comparar grupos,
+              categorías, trayectorias o intensidades de opinión entre usuarios.
+            </p>
+          </section>
+
+          <section class="paso" data-escena="detalle" data-etapa="Escena 4" data-titulo="Acercarse al detalle">
+            <p class="etiqueta">Escena 4</p>
+            <h2>Acercarse al detalle</h2>
+            <p>
+              Termina con una lectura más precisa. El cierre puede revelar una excepción, una
+              consecuencia o una pregunta que no era visible al comienzo del recorrido.
+            </p>
+          </section>
+        </article>
+      </section>
+
+      <section class="cierre">
+        <p class="etiqueta">Cierre</p>
+        <h2>Qué debe quedar después del recorrido</h2>
+        <p>
+          Resume la idea central y explica cómo leer el movimiento: qué significa cada transición,
+          qué decisión editorial tomaste y qué límites tienen los datos y las interpretaciones de los
+          modelos de lenguaje.
+        </p>
       </section>
     </main>
 

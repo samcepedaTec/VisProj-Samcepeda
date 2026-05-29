@@ -1,22 +1,62 @@
 [
   {
-    "categoria": "Categoría A",
-    "valor": 34,
-    "nota": "Mayor concentración del conjunto"
+    "categoria": "1. Arte visual",
+    "valor": 489,
+    "nota": "art,sketch,comics,fantasy,humanart,illustration,artist,artwork,manga,conceptart,humor,myart,humanartist,comic,synastry,synastrycomic,astrology,aries,ganador,nick,snake,snakes,capricorn,biker,mangaart,synastrymanga,satire,ripscottadams,dilbert,politicalmemes,politics,politicalcartoon,politicalcartoonist,cartoon,cartoons,handdrawn,politicalcartoons,conservative,libertarian,commentary,design,artbook,demon,darkart,creature,artistsoninstagram,instaart,painting"
   },
   {
-    "categoria": "Categoría B",
-    "valor": 21,
-    "nota": "Valor intermedio con tendencia estable"
+    "categoria": "2. IA creativa",
+    "valor": 287,
+    "nota": "ai,aivideo,creativeai,chatgpt,aiethics,tiktok,grok,buildinpublic,genai,artificialintelligence,anime"
   },
   {
-    "categoria": "Categoría C",
-    "valor": 13,
-    "nota": "Caso menor pero relevante para comparar"
+    "categoria": "3. Gaming viral",
+    "valor": 142,
+    "nota": "fyp,roblox,fortnite,ブレインロット,content,shorts,trending,real,williamest"
   },
   {
-    "categoria": "Categoría D",
-    "valor": 8,
-    "nota": "Categoría pequeña que puede requerir contexto"
+    "categoria": "4. Innovación IA",
+    "valor": 138,
+    "nota": "innovation,aitools,aiinnovation,videogeneration,aidesign,aitrends,generativeai,futureofai,techtrends"
+  },
+  {
+    "categoria": "5. Marketing digital",
+    "valor": 106,
+    "nota": "contentcreation,digitalmarketing,aimarketing,futureofcontent,contentstrategy,aicommunity,aiworkflow,aiwriting,techinnovation,contentcreators,digitalwriting"
+  },
+  {
+    "categoria": "6. Arte y personajes",
+    "valor": 91,
+    "nota": "oc,characterdesign,smallartist,doodle,artistontwitter,artmoots"
+  },
+  {
+    "categoria": "7. Cripto-politica",
+    "valor": 88,
+    "nota": "trump,crypto,elonmusk,memecoin,aifun,helevier,invest,doge,binance,troll,elon,usa,bullish"
+  },
+  {
+    "categoria": "8. Diseño digital",
+    "valor": 65,
+    "nota": "visualstorytelling,aifashion,iacreator,ugc,aianimation,digitaldesign,fashiontech,aiinfluencer"
+  },
+  {
+    "categoria": "9. Comic tradicional",
+    "valor": 52,
+    "nota": "comicart,originalart,artinvestment,traditionalmedia,collectibles,arte,industriadelcomic,arteconomy,physicalart,cgc,inkandpaper,artmarket,nophotoshop"
+  },
+  {
+    "categoria": "10. Anti IA",
+    "valor": 37,
+    "nota": "noai,microslop"
+  },
+  {
+    "categoria": "11. Fotografia & IA",
+    "valor": 37,
+    "nota": "aiphotography,aiimages,digitalcreators,photomagic,ɪɴsᴛᴀʀᴇᴇʟs,winteraesthetic,christmasedit,christmasvibes,aitransformation,voymageai,voymage"
+  },
+  {
+    "categoria": "12. Galería IA",
+    "valor": 12,
+    "nota": "aiartworks"
   }
 ]

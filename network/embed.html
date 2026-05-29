@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red interactiva</title>
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/sigma/sigma.min.js"></script>
+  <script src="js/sigma/sigma.parseJson.js"></script>
+  <script src="js/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="js/main.js?v=7"></script>
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tema-sitio.css?v=11">
+  <link rel="stylesheet" href="css/tablet.css" media="screen and (max-height: 770px)">
+</head>
+<body>
+  <div class="sigma-parent">
+    <div class="sigma-expand" id="sigma-canvas"></div>
+  </div>
+  <div id="mainpanel">
+    <div class="col">
+      <div id="maintitle"></div>
+      <div id="title"></div>
+      <div id="titletext"></div>
+      <div class="info cf">
+        <dl>
+          <dt class="moreinformation"></dt>
+          <dd class="line"><a href="#information" class="line fb">Cómo usar esta red</a></dd>
+        </dl>
+      </div>
+      <div id="legend">
+        <div class="box">
+          <h2>Leyenda</h2>
+          <dl>
+            <dt class="node"></dt>
+            <dd></dd>
+            <dt class="edge"></dt>
+            <dd></dd>
+            <dt class="colours"></dt>
+            <dd></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="b1">
+        <form>
+          <div id="search" class="cf">
+            <h2>Buscar</h2>
+            <input type="text" name="search" value="Buscar por nombre" class="empty">
+            <div class="state"></div>
+            <div class="results"></div>
+          </div>
+          <div class="cf" id="attributeselect">
+            <h2>Grupos</h2>
+            <div class="select">Seleccionar grupo</div>
+            <div class="list cf"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="information"></div>
+  </div>
+  <div id="herramientas-mapa">
+    <button
+      type="button"
+      id="btn-pan"
+      class="herramienta-mapa"
+      aria-pressed="false"
+      aria-label="Desplazar mapa: activar para arrastrar la vista"
+      title="Desplazar mapa"
+    >
+      <span class="icono-mano" aria-hidden="true"></span>
+    </button>
+    <div id="zoom">
+      <div class="z herramienta-mapa" rel="in" title="Acercar" aria-label="Acercar">
+        <span class="icono-zoom-in" aria-hidden="true"></span>
+      </div>
+      <div class="z herramienta-mapa" rel="out" title="Alejar" aria-label="Alejar">
+        <span class="icono-zoom-out" aria-hidden="true"></span>
+      </div>
+      <div class="z herramienta-mapa" rel="center" title="Escala 1:1" aria-label="Restablecer escala 1:1">
+        <span class="icono-zoom-reset" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+  <div id="attributepane">
+    <div class="text">
+      <div title="Cerrar" class="left-close returntext">
+        <div class="c cf"><span>Volver a la red completa</span></div>
+      </div>
+      <div class="headertext">
+        <span>Panel de información</span>
+      </div>
+      <div class="nodeattributes">
+        <div class="name"></div>
+        <div class="data"></div>
+        <div class="p">Conexiones:</div>
+        <div class="link">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

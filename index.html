@@ -29,6 +29,7 @@
           Buscamos las tendencias de opinión entre usuarios que discuten sobre la creatividad asistida por IA (específicamente en X, antes Twitter), y con herramientas avanzadas de procesamiento de lenguaje natural
           (LLMs) observamos la interpretación que los LLMs hacen de nuestras opiniones para ver hasta dónde son capaces de captar la complejidad de los matices humanos. Esto es lo que encontramos.
         </p>
+        <h2>La conversación entre humanos a través de hashtags</h2>
       </section>
 
       <section class="panel-resumen" aria-label="Resumen de datos">
@@ -63,13 +64,6 @@
       <section class="contenedor-red" aria-label="Red interactiva de hashtags">
         <p class="etiqueta">Red de relaciones</p>
         <h2>Hashtags por grupo y las conexiones entre ellos</h2>
-        <p>
-          Explora la estructura de la conversación: cada nodo es un hashtag y los colores corresponden a los
-          mismos 12 grupos temáticos de la gráfica anterior.
-        </p>
-        <p class="texto-apoyo">
-          Acércate de los nodos con el zoom y panea la vista con el ícono de mano para explorar las relaciones entre hashtags de cada grupo.
-        </p>
         <iframe
           class="modulo-red-frame"
           src="network/embed.html"
@@ -79,16 +73,10 @@
       </section>
 
       <section class="bloque-lectura">
-        <p class="etiqueta">¿Qué significa esto?</p>
+        <h2>Humanos vs no humanos</h2>
         <p class="lectura">
-          Se usaron los modelos de lenguaje <span class="mencion-llm">Gemma3</span> y
-          <span class="mencion-llm">Falcon3</span> para clasificar, en positivas, negativas o neutras, las posturas de los usuarios.
+          Aunque los hashtags son útiles para agrupar temas, muchas veces no nos dan suficiente contexto como para saber si alguien está a favor o en contra de algo. Con esto en mente, decidimos clasificar las publicaciones para ver cómo se comportan los LLMs al interpretar las opiniones de los humanos.
         </p>
-        <p id="lectura" class="lectura">Cargando datos...</p>
-        <p class="lectura">
-          La interpretación de los LLMs fue muy distinta entre sí. Mientras en <span class="mencion-llm">Gemma3</span> prevalecen posiciones neutrales, <span class="mencion-llm">Falcon3</span> utiliza un enfoque más polarizado e interpretó más posturas negativas, estamos frente a dos formas diferentes de tratar con la ambiguaedad del lenguaje humano.
-        </p>
-      </section>
 
       <section class="relato" aria-label="Relato con paralaje">
         <div class="escena" aria-hidden="true">
@@ -101,75 +89,277 @@
             <div class="montana montana-fondo"></div>
             <div class="montana montana-frente"></div>
 
-            <div class="mapa">
-              <span class="zona zona-a"></span>
-              <span class="zona zona-b"></span>
-              <span class="zona zona-c"></span>
-              <span class="punto punto-a"></span>
-              <span class="punto punto-b"></span>
-              <span class="punto punto-c"></span>
+            <div class="grafico-llms" role="img" aria-label="Comparación Gemma3 y Falcon3 en posturas y temas">
+              <div class="grafico-llms-grid">
+                <article class="panel-llm">
+                  <header class="panel-llm-encabezado">
+                    <p class="panel-llm-modelo"><span class="mencion-llm">Gemma3</span></p>
+                    <p class="panel-llm-muestra">4372 #s</p>
+                    <p class="panel-llm-subtitulo">Posturas</p>
+                  </header>
+                  <div class="panel-llm-apilado">
+                    <span class="segmento segmento-negativa" style="width: 14%" title="Negativas 14%"></span>
+                    <span class="segmento segmento-positiva" style="width: 8%" title="Positivas 8%"></span>
+                    <span class="segmento segmento-neutral" style="width: 77%" title="Neutral 77%"></span>
+                  </div>
+                  <ul class="panel-llm-lista">
+                    <li class="postura postura-negativa">
+                      <span class="postura-nombre">Negativas</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 14%"></span></span>
+                      <span class="postura-pct">14%</span>
+                    </li>
+                    <li class="postura postura-positiva">
+                      <span class="postura-nombre">Positivas</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 8%"></span></span>
+                      <span class="postura-pct">8%</span>
+                    </li>
+                    <li class="postura postura-neutral postura-destacada">
+                      <span class="postura-nombre">Neutral</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 77%"></span></span>
+                      <span class="postura-pct">77%</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="panel-llm">
+                  <header class="panel-llm-encabezado">
+                    <p class="panel-llm-modelo"><span class="mencion-llm">Falcon3</span></p>
+                    <p class="panel-llm-muestra">4469 #s</p>
+                    <p class="panel-llm-subtitulo">Posturas</p>
+                  </header>
+                  <div class="panel-llm-apilado">
+                    <span class="segmento segmento-negativa" style="width: 53%" title="Negativas 53%"></span>
+                    <span class="segmento segmento-positiva" style="width: 12%" title="Positivas 12%"></span>
+                    <span class="segmento segmento-neutral" style="width: 35%" title="Neutral 35%"></span>
+                  </div>
+                  <ul class="panel-llm-lista">
+                    <li class="postura postura-negativa postura-destacada">
+                      <span class="postura-nombre">Negativas</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 53%"></span></span>
+                      <span class="postura-pct">53%</span>
+                    </li>
+                    <li class="postura postura-positiva">
+                      <span class="postura-nombre">Positivas</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 12%"></span></span>
+                      <span class="postura-pct">12%</span>
+                    </li>
+                    <li class="postura postura-neutral">
+                      <span class="postura-nombre">Neutral</span>
+                      <span class="postura-riel" aria-hidden="true"><span style="width: 35%"></span></span>
+                      <span class="postura-pct">35%</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="panel-llm">
+                  <header class="panel-llm-encabezado">
+                    <p class="panel-llm-modelo"><span class="mencion-llm">Gemma3</span></p>
+                    <p class="panel-llm-muestra">4372 #s</p>
+                    <p class="panel-llm-subtitulo">Temas</p>
+                  </header>
+                  <div class="panel-llm-apilado">
+                    <span class="segmento segmento-arte" style="width: 53%" title="Artístico 53%"></span>
+                    <span class="segmento segmento-tecnico" style="width: 40%" title="Técnicos 40%"></span>
+                    <span class="segmento segmento-empresas" style="width: 6%" title="Empresas de IA 6%"></span>
+                    <span class="segmento segmento-politico" style="width: 1%" title="Político 1%"></span>
+                  </div>
+                  <ul class="panel-llm-lista">
+                    <li class="tema tema-arte tema-destacado">
+                      <span class="tema-nombre">Artístico</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 53%"></span></span>
+                      <span class="tema-pct">53%</span>
+                    </li>
+                    <li class="tema tema-tecnico">
+                      <span class="tema-nombre">Técnicos</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 40%"></span></span>
+                      <span class="tema-pct">40%</span>
+                    </li>
+                    <li class="tema tema-empresas">
+                      <span class="tema-nombre">Empresas de IA</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 6%"></span></span>
+                      <span class="tema-pct">6%</span>
+                    </li>
+                    <li class="tema tema-politico">
+                      <span class="tema-nombre">Político</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 1%"></span></span>
+                      <span class="tema-pct">1%</span>
+                    </li>
+                  </ul>
+                </article>
+
+                <article class="panel-llm">
+                  <header class="panel-llm-encabezado">
+                    <p class="panel-llm-modelo"><span class="mencion-llm">Falcon3</span></p>
+                    <p class="panel-llm-muestra">7595 #s</p>
+                    <p class="panel-llm-subtitulo">Temas</p>
+                  </header>
+                  <div class="panel-llm-apilado">
+                    <span class="segmento segmento-arte" style="width: 15%" title="Artístico 15%"></span>
+                    <span class="segmento segmento-sugerencia" style="width: 48%" title="Sugerencia artística 48%"></span>
+                    <span class="segmento segmento-tecnico" style="width: 28%" title="Técnicos 28%"></span>
+                    <span class="segmento segmento-empresas" style="width: 8%" title="Empresas de IA 8%"></span>
+                    <span class="segmento segmento-indefinido" style="width: 1%" title="Sin definición 1%"></span>
+                  </div>
+                  <ul class="panel-llm-lista">
+                    <li class="tema tema-arte">
+                      <span class="tema-nombre">Artístico</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 15%"></span></span>
+                      <span class="tema-pct">15%</span>
+                    </li>
+                    <li class="tema tema-sugerencia tema-destacado">
+                      <span class="tema-nombre">Sugerencia artística</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 48%"></span></span>
+                      <span class="tema-pct">48%</span>
+                    </li>
+                    <li class="tema tema-tecnico">
+                      <span class="tema-nombre">Técnicos</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 28%"></span></span>
+                      <span class="tema-pct">28%</span>
+                    </li>
+                    <li class="tema tema-empresas">
+                      <span class="tema-nombre">Empresas de IA</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 8%"></span></span>
+                      <span class="tema-pct">8%</span>
+                    </li>
+                    <li class="tema tema-indefinido">
+                      <span class="tema-nombre">Sin definición</span>
+                      <span class="tema-riel" aria-hidden="true"><span style="width: 1%"></span></span>
+                      <span class="tema-pct">1%</span>
+                    </li>
+                  </ul>
+                </article>
+              </div>
             </div>
 
-            <div class="grafico-escena">
-              <span style="--alto: 34%"></span>
-              <span style="--alto: 58%"></span>
-              <span style="--alto: 76%"></span>
-              <span style="--alto: 46%"></span>
+            <div class="grafico-posturas" role="img" aria-label="De 711 publicaciones: Neutral 86%, Negativas 8%, Positivas 6%">
+              <header class="grafico-posturas-encabezado">
+                <p class="grafico-posturas-muestra">711 publicaciones</p>
+                <p class="grafico-posturas-subtitulo">Posturas en la conversación</p>
+              </header>
+
+              <div class="grafico-posturas-apilado">
+                <span class="segmento segmento-neutral" style="width: 86%" title="Neutral 86%"></span>
+                <span class="segmento segmento-negativa" style="width: 8%" title="Negativas 8%"></span>
+                <span class="segmento segmento-positiva" style="width: 6%" title="Positivas 6%"></span>
+              </div>
+
+              <ul class="grafico-posturas-lista">
+                <li class="postura postura-neutral">
+                  <span class="postura-nombre">Neutral</span>
+                  <span class="postura-riel" aria-hidden="true"><span style="width: 86%"></span></span>
+                  <span class="postura-pct">86%</span>
+                </li>
+                <li class="postura postura-negativa">
+                  <span class="postura-nombre">Negativas</span>
+                  <span class="postura-riel" aria-hidden="true"><span style="width: 8%"></span></span>
+                  <span class="postura-pct">8%</span>
+                </li>
+                <li class="postura postura-positiva">
+                  <span class="postura-nombre">Positivas</span>
+                  <span class="postura-riel" aria-hidden="true"><span style="width: 6%"></span></span>
+                  <span class="postura-pct">6%</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="grafico-temas" role="img" aria-label="De 5337 publicaciones: Arte y creatividad 56%, Aspectos técnicos 17%, Empresas de IA 4%, Sin definición clara 22%">
+              <header class="grafico-temas-encabezado">
+                <p class="grafico-temas-muestra">5337 publicaciones</p>
+                <p class="grafico-temas-subtitulo">Temas de la conversación</p>
+              </header>
+
+              <div class="grafico-temas-apilado">
+                <span class="segmento segmento-arte" style="width: 56%" title="Arte y creatividad 56%"></span>
+                <span class="segmento segmento-tecnico" style="width: 17%" title="Aspectos técnicos 17%"></span>
+                <span class="segmento segmento-empresas" style="width: 4%" title="Empresas de IA 4%"></span>
+                <span class="segmento segmento-indefinido" style="width: 22%" title="Sin definición clara 22%"></span>
+              </div>
+
+              <ul class="grafico-temas-lista">
+                <li class="tema tema-arte">
+                  <span class="tema-nombre">Arte y creatividad</span>
+                  <span class="tema-riel" aria-hidden="true"><span style="width: 56%"></span></span>
+                  <span class="tema-pct">56%</span>
+                </li>
+                <li class="tema tema-tecnico">
+                  <span class="tema-nombre">Aspectos técnicos</span>
+                  <span class="tema-riel" aria-hidden="true"><span style="width: 17%"></span></span>
+                  <span class="tema-pct">17%</span>
+                </li>
+                <li class="tema tema-empresas">
+                  <span class="tema-nombre">Empresas de IA</span>
+                  <span class="tema-riel" aria-hidden="true"><span style="width: 4%"></span></span>
+                  <span class="tema-pct">4%</span>
+                </li>
+                <li class="tema tema-indefinido">
+                  <span class="tema-nombre">Sin definición clara</span>
+                  <span class="tema-riel" aria-hidden="true"><span style="width: 22%"></span></span>
+                  <span class="tema-pct">22%</span>
+                </li>
+              </ul>
             </div>
 
             <div class="rotulo">
               <p id="rotulo-etapa">Escena 1</p>
-              <strong id="rotulo-titulo">Ubicar el territorio</strong>
+              <strong id="rotulo-titulo">Lo que interpretamos los humanos</strong>
             </div>
           </div>
         </div>
 
         <article class="pasos">
-          <section class="paso activo" data-escena="territorio" data-etapa="Escena 1" data-titulo="Ubicar el territorio">
+          <section class="paso activo" data-escena="territorio" data-etapa="Escena 1" data-titulo="Lo que interpretamos los humanos">
             <p class="etiqueta">Escena 1</p>
-            <h2>Ubicar el territorio</h2>
+            <h2>Lo que interpretamos los humanos</h2>
             <p>
-              Empieza con una vista amplia. Antes de mostrar datos complejos, sitúa el lugar, la
-              escala y la pregunta que organiza la historia sobre la creatividad asistida por IA.
+              Después de analizar las publicaciones compiladas, lo más interesante que encontramos es que la mayoría no toma un lado claro. Pensábamos que iba a haber más peleas entre los que aman y los que odian la IA, pero...
             </p>
           </section>
 
-          <section class="paso" data-escena="cambio" data-etapa="Escena 2" data-titulo="Mostrar el cambio">
+          <section class="paso" data-escena="cambio" data-etapa="Escena 2" data-titulo="De qué va la discusión humana">
             <p class="etiqueta">Escena 2</p>
-            <h2>Mostrar el cambio</h2>
+            <h2>De qué va la discusión humana</h2>
             <p>
-              La segunda escena puede activar una capa temporal: qué aumentó, qué se desplazó, qué aparece o qué desaparece frente al punto de partida en la conversación pública.
+              la conversación es más sobre arte que sobre tecnología. Más de la mitad de las publicaciones están relacionadas con cómo la IA puede ser una herrmienta para crear. Algunos se enfocan más en cómo funciona la IA, los algoritmos, o las herramientas que hay detrás de todo esto. Unos pocos hablan sobre las grandes compañías que están detrás de estas tecnologías y hay un buen número de publicaciones que no encajan en ninguna categoría específica.
             </p>
           </section>
 
-          <section class="paso" data-escena="contraste" data-etapa="Escena 3" data-titulo="Comparar casos">
+          <section class="paso" data-escena="contraste" data-etapa="Escena 3" data-titulo="Lo que interpretan los LLMs">
             <p class="etiqueta">Escena 3</p>
-            <h2>Comparar casos</h2>
+            <h2>Lo que interpretan los LLMs de nuestra disución humana</h2>
             <p>
-              Un buen sistema dinámico no solo anima la página. También ayuda a comparar grupos,
-              categorías, trayectorias o intensidades de opinión entre usuarios.
-            </p>
-          </section>
-
-          <section class="paso" data-escena="detalle" data-etapa="Escena 4" data-titulo="Acercarse al detalle">
-            <p class="etiqueta">Escena 4</p>
-            <h2>Acercarse al detalle</h2>
-            <p>
-              Termina con una lectura más precisa. El cierre puede revelar una excepción, una
-              consecuencia o una pregunta que no era visible al comienzo del recorrido.
+              La interpretación de los LLMs al clasificar en positivas, negativas o neutras, las posturas de los usuarios fue muy distinta entre sí. Mientras en Gemma3 prevalecen posiciones neutrales, Falcon3 utiliza un enfoque más polarizado e interpretó más posturas negativas.
             </p>
           </section>
         </article>
       </section>
 
-      <section class="cierre">
+      <section class="intro cierre">
         <p class="etiqueta">Cierre</p>
-        <h2>Qué debe quedar después del recorrido</h2>
-        <p>
-          Resume la idea central y explica cómo leer el movimiento: qué significa cada transición,
-          qué decisión editorial tomaste y qué límites tienen los datos y las interpretaciones de los
-          modelos de lenguaje.
-        </p>
+        <h2>¿Qué reflexión nos deja este ejercicio?</h2>
+        <ol class="cierre-lista">
+          <li>
+            No todos los modelos de lenguaje funcionan igual, y esto quedó demostrado al comparar
+            <span class="mencion-llm">Falcon3</span> y <span class="mencion-llm">Gemma3</span>.
+            Aunque ambos clasifican y analizan datos, lo hacen de formas distintas: Falcon3 tiende a
+            razonar con más contexto; Gemma3 responde de manera más directa y categórica.
+          </li>
+          <li>
+            El enfoque humano sigue siendo clave cuando los datos son difíciles de clasificar. Ante
+            publicaciones ambiguas, los investigadores buscaron patrones generales en lugar de forzar
+            una etiqueta. Falcon3 se acercó más a esa lógica; Gemma3 ofreció respuestas más definitivas,
+            con menos explicación.
+          </li>
+          <li>
+            Tanto personas como modelos detectaron que gran parte de la conversación gira en torno al
+            arte y la creatividad. Pero incluso ahí divergieron: Falcon3 formuló sugerencias razonadas;
+            Gemma3 prefirió clasificaciones más cerradas.
+          </li>
+          <li>
+            Combinar lectura humana y apoyo de LLMs es útil, pero las inteligencias artificiales no son
+            infalibles. Los modelos ayudan a detectar patrones; el criterio humano sigue siendo esencial
+            en temas complejos como la creatividad, donde el contexto importa tanto como la categoría.
+          </li>
+        </ol>
       </section>
     </main>
 

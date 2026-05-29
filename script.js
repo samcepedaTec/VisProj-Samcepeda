@@ -158,13 +158,6 @@ function formatearNumero(numero) {
   return new Intl.NumberFormat("es-CO").format(numero);
 }
 
-function resumenEtiquetas(etiquetas, limite = 4) {
-  if (!etiquetas.length) return "Sin etiquetas";
-  const muestra = etiquetas.slice(0, limite).join(", ");
-  const restantes = etiquetas.length - limite;
-  return restantes > 0 ? `${muestra} (+${restantes} más)` : muestra;
-}
-
 function formatearHashtag(etiqueta) {
   const limpia = String(etiqueta).trim();
   return limpia.startsWith("#") ? limpia : `#${limpia}`;
@@ -178,15 +171,6 @@ function htmlEtiquetasTooltip(etiquetas) {
   return etiquetas
     .map((etiqueta) => `<span class="tag">${escaparHtml(formatearHashtag(etiqueta))}</span>`)
     .join("");
-}
-
-function actualizarColorGaleria(datos) {
-  const galeria = datos.find((fila) => /galer[ií]a/i.test(fila.categoria));
-  if (!galeria) return;
-
-  const valores = datos.map((fila) => fila.valor);
-  const color = colorPorValor(galeria.valor, Math.min(...valores), Math.max(...valores));
-  document.documentElement.style.setProperty("--color-galeria", color);
 }
 
 function actualizarResumen(datos) {
@@ -237,38 +221,6 @@ function dibujarGrafica(datos) {
     .join("");
 }
 
-function actualizarGraficoEscena(datos) {
-  const barras = document.querySelectorAll(".grafico-escena span");
-  const top = datos.slice(0, barras.length);
-  const maximo = top[0]?.valor || 1;
-
-  barras.forEach((barra, indice) => {
-    const fila = top[indice];
-    if (!fila) return;
-    const alto = (fila.valor / maximo) * 100;
-    barra.style.setProperty("--alto", `${alto}%`);
-    barra.title = fila.categoria;
-  });
-}
-
-function escribirLectura(datos) {
-  const totalFrecuencia = datos.reduce((suma, fila) => suma + fila.valor, 0);
-  const valores = datos.map((fila) => fila.valor);
-  const minimo = Math.min(...valores);
-  const maximo = Math.max(...valores);
-  const mayor = datos[0];
-  const menor = datos[datos.length - 1];
-  const porcentajeMayor = ((mayor.valor / totalFrecuencia) * 100).toFixed(1);
-  const colorMayor = colorPorValor(mayor.valor, minimo, maximo);
-  const colorMenor = colorPorValor(menor.valor, minimo, maximo);
-
-  document.querySelector("#lectura").innerHTML =
-    `<span class="categoria-lectura" style="color: ${colorMayor}">${escaparHtml(mayor.categoria)}</span> concentra la mayor frecuencia (${formatearNumero(mayor.valor)}, ${porcentajeMayor}% del total), ` +
-    `integrando ${mayor.etiquetas.length} hashtags. ` +
-    `En contraste, <span class="categoria-lectura" style="color: ${colorMenor}">${escaparHtml(menor.categoria)}</span> registra ${formatearNumero(menor.valor)} menciones con ${menor.etiquetas.length} etiqueta${menor.etiquetas.length === 1 ? "" : "s"}. ` +
-    `El conjunto agrupa ${formatearNumero(datos.length)} categorías temáticas sobre creatividad e IA en X.`;
-}
-
 function iniciarScrollytelling() {
   const pasos = [...document.querySelectorAll(".paso")];
   const lienzo = document.querySelector("#lienzo");
@@ -313,10 +265,7 @@ function iniciarScrollytelling() {
 }
 
 cargarDatos().then((datos) => {
-  actualizarColorGaleria(datos);
   actualizarResumen(datos);
   dibujarGrafica(datos);
-  actualizarGraficoEscena(datos);
-  escribirLectura(datos);
   iniciarScrollytelling();
 });

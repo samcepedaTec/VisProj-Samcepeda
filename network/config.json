@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": ""
+  },
+  "text": {
+    "more": "<h3>Cómo leer la red</h3><p>Cada nodo es un hashtag. El color indica uno de los 12 grupos temáticos de la gráfica principal.</p><p>Usa el buscador o el selector de grupos para focalizar. Haz clic en un nodo para ver sus conexiones en el panel lateral y su información estadística.</p>",
+    "intro": "Los 12 colores coinciden con los grupos de la gráfica. Arrastra los nodos, haz zoom o panea la vista con el ícono de mano para explora la red.",
+    "title": "Red de hashtags"
+  },
+  "legend": {
+    "edgeLabel": "Vínculo entre hashtags",
+    "colorLabel": "Grupo temático",
+    "nodeLabel": "Hashtag"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Grupo temático",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "Weighted Degree"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 0.5,
+      "minEdgeSize": 0.2,
+      "minNodeSize": 1,
+      "maxNodeSize": 7
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}

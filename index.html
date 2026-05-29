@@ -49,7 +49,7 @@
       <section class="contenedor-viz">
         <div>
           <p class="etiqueta">Visualización</p>
-          <h2>Valores por categoría</h2>
+          <h2>Frecuencia de uso por categoría</h2>
           <p>
             Cada categoría temática agrupa hashtags
           </p>
@@ -58,6 +58,24 @@
           </p>
         </div>
         <div id="grafica" class="grafica" aria-live="polite"></div>
+      </section>
+
+      <section class="contenedor-red" aria-label="Red interactiva de hashtags">
+        <p class="etiqueta">Red de relaciones</p>
+        <h2>Hashtags por grupo y las conexiones entre ellos</h2>
+        <p>
+          Explora la estructura de la conversación: cada nodo es un hashtag y los colores corresponden a los
+          mismos 12 grupos temáticos de la gráfica anterior.
+        </p>
+        <p class="texto-apoyo">
+          Acércate de los nodos con el zoom y panea la vista con el ícono de mano para explorar las relaciones entre hashtags de cada grupo.
+        </p>
+        <iframe
+          class="modulo-red-frame"
+          src="network/embed.html"
+          title="Red interactiva de hashtags y categorías"
+          loading="lazy"
+        ></iframe>
       </section>
 
       <section class="bloque-lectura">

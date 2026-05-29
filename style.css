@@ -179,6 +179,33 @@ main {
   border-bottom: 1px solid var(--linea);
 }
 
+.contenedor-red {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.contenedor-red > p:not(.etiqueta):not(.texto-apoyo) {
+  max-width: 720px;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: var(--tam-cuerpo-alt);
+}
+
+.contenedor-red h2 {
+  margin-top: 0.25rem;
+}
+
+.modulo-red-frame {
+  display: block;
+  width: 100%;
+  min-height: min(78vh, 820px);
+  height: 78vh;
+  margin-top: 1.5rem;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  background: var(--fondo);
+}
+
 .contenedor-viz p:not(.etiqueta):not(.texto-apoyo) {
   margin-top: 1rem;
   color: var(--muted);
@@ -569,6 +596,11 @@ main {
   .panel-resumen,
   .contenedor-viz {
     grid-template-columns: 1fr;
+  }
+
+  .modulo-red-frame {
+    min-height: 62vh;
+    height: 62vh;
   }
 
   .barra {
